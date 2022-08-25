@@ -1,0 +1,13 @@
+server:
+  port: 8099
+
+spring:
+  mvc:
+    view:
+      prefix: /views/
+      suffix: .jsp
+  devtools:
+    livereload:
+      enabled: false
+    restart:
+      enabled: false
