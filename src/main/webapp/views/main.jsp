@@ -19,7 +19,7 @@
     </nav>
 
     <div class="topMenuBarRight">
-        <span class="topMenuText" style="margin-right: 30px">로그인</span>
+        <span class="topMenuText" style="margin-right: 30px" id="login">로그인</span>
         <a href="/" class="topMenuButton">
             <span>무료 평가판</span>
             <span>→</span>
