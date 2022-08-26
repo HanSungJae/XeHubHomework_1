@@ -1,4 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,42 +8,274 @@
     <title>Homework</title>
     <style>
         body{
-            background-color: #dcdcdc;
-
+            background-color: #f7f5f2;
+            padding-top: 66px;
         }
-        .container{
+        .topMenuBar{
+            padding: 1rem;
+            color: #1e1919;
+            background: white;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
 
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
         }
-        .item{
+        .topMenuBarRight{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-direction: row;
+        }
+        .topMenuText{
+            margin: 10px;
+        }
+        @media (min-width: 1200px) {
+            .container{
+                display: flex;
+                justify-content: center;
+                margin-bottom: 170px;
+                flex-wrap: wrap;
+            }
+            .containerTop{
+                display: flex;
+                justify-content: center;
+                margin-bottom: 170px;
+                flex-wrap: wrap;
+            }
+            .container2{
+                display: flex;
+                justify-content: center;
+                margin-bottom: 170px;
+                flex-wrap: wrap;
+            }
+            .item{
+                flex-basis: 100px;
+                flex-grow: 1;
+                height: 500px;
+                margin: 50px;
+                justify-content: center;
+            }
+            .imgitem{
+                flex-basis: 100px;
+                flex-grow: 1;
+                height: 500px;
+                margin-left: 70px;
+            }
+            .title{
+                margin: 30px 50px;
+                font-size: 32px;
+                display: flex;
+                justify-content: center;
+            }
+            .text{
+                font-size: 16px;
+                margin: 35px;
+            }
+            .itemButton{
+
+                font-family: "Noto Sans KR", sans-serif;
+                font-size: 1rem;
+                width: 95%;
+                width: 290px;
+                display: flex;
+                justify-content: space-between;
+
+                border: none;
+
+                background-color: #f7f5f2;
+                color: black;
+                border: 2px solid #1e1919;
+                left: 24px;
+                height: 24px;
+                padding: 24px;
+                margin: 35px;
+            }
+            .itemCanceltext{
+                color: gray;
+                margin-left: 35px;
+                margin-right: 35px;
+                margin-top: -15px;
+            }
+        }
+        @media (max-width: 1199px) {
+
+            .container{
+                display: flex;
+                justify-content: center;
+                margin: 140px;
+                flex-wrap: wrap;
+                flex-direction: column;
+            }
+            .container2{
+                display: flex;
+                justify-content: center;
+                margin: 140px;
+                flex-wrap: wrap;
+                flex-direction: column-reverse;
+            }
+            .item{
+                flex-basis: 100px;
+                flex-grow: 1;
+                margin: 50px;
+                justify-content: center;
+            }
+            .imgitem{
+                display: flex;
+                justify-content: center;
+                flex-basis: 100px;
+                flex-grow: 1;
+                height: 750px;
+            }
+            .title{
+                margin: 30px 50px;
+                font-size: 32px;
+                display: flex;
+            }
+            .text{
+                font-size: 16px;
+                margin: 30px 50px;
+                text-align: left;
+            }
+            .itemButton{
+
+                font-family: "Noto Sans KR", sans-serif;
+                font-size: 1rem;
+                width: 95%;
+                width: 290px;
+                display: flex;
+                justify-content: space-between;
+
+                border: none;
+
+                background-color: #f7f5f2;
+                color: black;
+                border: 2px solid #1e1919;
+                left: 24px;
+                height: 24px;
+                padding: 24px;
+                margin: 50px;
+            }
+            .itemCanceltext{
+                color: gray;
+                margin-left: 50px;
+                margin-right: 35px;
+                margin-top: -15px;
+            }
+        }
+
+
+        .headitem{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-wrap: wrap;
             flex-basis: 100px;
             flex-grow: 1;
             height: 500px;
-            margin: 50px;
         }
-
         .onlytext{
-            margin: 100px 300px 100px;
+            margin: 150px 200px 150px;
             text-align: center;
         }
-        .title{
-            margin: 10px 50px;
-            font-size: 32px;
-        }
-        .text{
+        .headtext{
             font-size: 16px;
-            margin: 15px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            margin-right: 8px;
+        }
+        a{
+            text-decoration-line: none;
+            color: white;
+        }
+
+        .topMenuButton{
+            font-family: "Noto Sans KR", sans-serif;
+            font-size: 1rem;
+            width: 95%;
+            width: 120px;
+            display: flex;
+            justify-content: space-between;
+
+            border: none;
+
+            background-color: #0061fe;
+            color: white;
+
+            height: 25px;
+            margin: -10px;
+            padding: 10px 16px 10px 12px;
+            font-weight: 400;
+        }
+        button{
+
+            font-family: "Noto Sans KR", sans-serif;
+            font-size: 1rem;
+            width: 95%;
+            display: flex;
+            justify-content: space-between;
+
+            border: none;
+
+            background-color: #0061fe;
+            color: white;
+            left: 24px;
+            height: 72px;
+            padding: 24px;
+        }
+        .canceltext{
+            color: gray;
+            margin: 20px;
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="item" style="background-color: black">
-        <div class="text" style="color: white">전자 서명이 간편해지는 HelloSign</div>
+<div class="topMenuBar">
+    <nav>
+        <span class="topMenuText">로고</span>
+        <span class="topMenuText">제품</span>
+        <span class="topMenuText">솔루션</span>
+        <span class="topMenuText">요금</span>
+        <span class="topMenuText">개발자</span>
+    </nav>
+
+    <div class="topMenuBarRight">
+        <span class="topMenuText" style="margin-right: 30px">로그인</span>
+        <a href="/" class="topMenuButton">
+            <span>무료 평가판</span>
+            <span>→</span>
+        </a>
     </div>
-    <div class="item" style="background-color: #FFE641"></div>
+
+</div>
+
+
+<div class="containerTop">
+    <div class="headitem" style="background-color: black">
+
+        <div>
+            <div class="headtext" style="color: white; float: left; margin-left: 15px"><a href="/">홈</a></div>
+            <div class="headtext" style="color: white; float: left"><a href="/">HelloSign이란?</a></div>
+            <div class="headtext" style="color: white">전자 서명</div>
+            <p style="margin: 15px; color: white; font-size: 46px">전자 서명이란 무엇인가요?</p>
+            <div class="text" style="color: white; font-size: 20px">전자 서명이 간편해지는 HelloSign</div>
+        </div>
+        <div>
+            <button style="margin-left: 14px">
+                <a href="/">지금바로 전자서명 시작하기</a>
+                <div>→</div>
+            </button>
+            <div class="canceltext">체험 중 언제든 취소 가능</div>
+        </div>
+
+    </div>
+    <div class="headitem" style="background-color: #fad24b">
+        <img src="../images/topImg.png" style="width: 475px; margin-left: 120px">
+    </div>
 </div>
 
 <div class="onlytext">
@@ -67,9 +298,89 @@
         <div class="text">터치스크린 기능이 지원될 경우 손가락을 사용해 문서에서 바로 전자 서명을 만들 수 있습니다.
             이 방법은 모바일 장치나 태블릿을 사용할 때 특히 유용합니다.</div>
     </div>
-    <div class="item">
-        <img src="images/img1.png">
+    <div class="imgitem">
+        <img src="../images/img1.png" style="height: 700px">
     </div>
+</div>
+
+<div class="container2">
+    <div class="imgitem">
+        <img src="../images/img2.png" style="height: 700px">
+    </div>
+    <div class="item">
+        <div class="title">서명 이미지 업로드</div>
+        <div class="text">휴대폰이나 카메라로 종이에 한 서명을 사진으로 찍습니다. 이 사진을 HelloSign 계정으로 업로드하면 문서 서명란에 깔끔하게
+            삽입할 수 있는 PNG 파일로 전환됩니다.</div>
+    </div>
+</div>
+<div class="container">
+    <div class="item">
+        <div class="title">마우스커서로 서명 그리기</div>
+        <div class="text">마우스 커서나 터치패드를 사용해서 선을 따라 커서를 드래그하여 나만의 고유한 전자 서명을 만들 수 있습니다.</div>
+    </div>
+    <div class="imgitem">
+        <img src="../images/img3.png" style="height: 700px">
+    </div>
+</div>
+<div class="container2">
+    <div class="imgitem">
+        <img src="../images/img4.png" style="height: 700px">
+    </div>
+    <div class="item">
+        <div class="title">키보드로 서명 입력</div>
+        <div class="text">이 방식은 전자 서명을 만드는 방법 중에서 가장 쉬운 방법인데요, 키보드로 이름을 입력한 후 서명 스타일에 가장 잘 어울리는
+            글꼴을 선택하기만 하면 됩니다.</div>
+        <div class="itemButton">
+            <a href="/" style="color: #1e1919">무료 평가판 사용하기</a>
+            <div>→</div>
+        </div>
+        <div class="itemCanceltext">체험 중 언제든 취소 가능</div>
+    </div>
+</div>
+</div>
+<div class="onlytext">
+    <div class="title">전자 서명으로 전환해야 하는 강력한 이유</div>
+    <div class="text">전자 서명을 사용하면 문서를 인쇄해 서명한 후 스캔하는 과정이 생략되어 워크플로가 향상됩니다. 또한 서류 작업을 간편하게 완료할
+        수 있어 생산성이 높아지고, 문서 회수 시간이 빨라지며, 보안이 향상되고, 비용이 저렴해집니다.</div>
+</div>
+<div class="container">
+    <div class="item">
+        <div class="title">전자 서명이 제공하는 주요 이점은 다음과 같습니다.</div>
+        <div class="text">
+            <ul>
+                <li>문서와 계약서의 회송 시간 단축</li><br>
+                <li>강화된 보안과 문서 활동 추적</li><br>
+                <li>비용 절감</li><br>
+                <li>종이 절약</li>
+            </ul>
+        </div>
+    </div>
+    <div class="imgitem">
+        <img src="../images/img5.png" style="height: 700px">
+    </div>
+</div>
+<div class="container2">
+    <div class="imgitem">
+        <img src="../images/img6.png" style="height: 700px">
+    </div>
+    <div class="item">
+        <div class="title">빠르고 간편하게 전자 서명 시작하기</div>
+        <div class="text">다음의 단계에 따라 첫 번째 전자 서명을 완료해보세요.
+            <ol type="1" style="margin-left: -20px"><br>
+                <li>HelloSign 계정을 만듭니다.</li><br>
+                <li>서명할 사람을 선택합니다.</li><br>
+                <li>문서를 업로드합니다.</li><br>
+                <li>문서에 서명하거나 서명 필드를 삽입합니다.</li><br>
+                <li>원하는 사람에게 문서를 전송합니다</li><br>
+            </ol>
+            <br>
+            진짜 간단하죠? 지금 바로 가입해 서명을 시작하세요.
+        </div>
+    </div>
+</div>
+<div class="onlytext">
+    <div class="title">자주 묻는 질문</div>
+
 </div>
 </body>
 </html>
